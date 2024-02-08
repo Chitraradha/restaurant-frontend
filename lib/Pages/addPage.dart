@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/services/restservices.dart';
 
 class AddPage extends StatefulWidget {
   const AddPage({super.key});
@@ -8,6 +9,22 @@ class AddPage extends StatefulWidget {
 }
 
 class _AddPageState extends State<AddPage> {
+  TextEditingController OrderID=new TextEditingController();
+  TextEditingController CustomerName=new TextEditingController();
+  TextEditingController CustPhoneNo=new TextEditingController();
+  TextEditingController FoodDetails=new TextEditingController();
+  TextEditingController Price=new TextEditingController();
+  void RestValueAdd() async{
+    final response=await ResApi().sendData(OrderID.text, CustomerName.text, CustPhoneNo.text, FoodDetails.text, Price.text);
+    if(response["status"]=="success")
+    {
+      print("Successfully Added");
+    }
+    else{
+      print("Error");
+    }
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +36,7 @@ class _AddPageState extends State<AddPage> {
         child: Column(
           children: [
             TextField(
+              controller: OrderID,
               decoration: InputDecoration(
                   labelText: "OrderId",
                   border: OutlineInputBorder()
@@ -26,6 +44,7 @@ class _AddPageState extends State<AddPage> {
             ),
             SizedBox(height: 20,),
             TextField(
+              controller: CustomerName,
               decoration: InputDecoration(
                   labelText: "CusName",
                   border: OutlineInputBorder()
@@ -33,6 +52,7 @@ class _AddPageState extends State<AddPage> {
             ),
             SizedBox(height: 20,),
             TextField(
+              controller: CustPhoneNo,
               decoration: InputDecoration(
                   labelText: "CusNumber",
                   border: OutlineInputBorder()
@@ -40,6 +60,7 @@ class _AddPageState extends State<AddPage> {
             ),
             SizedBox(height: 20,),
             TextField(
+              controller: FoodDetails,
               decoration: InputDecoration(
                   labelText: "Food Details",
                   border: OutlineInputBorder()
@@ -47,6 +68,7 @@ class _AddPageState extends State<AddPage> {
             ),
             SizedBox(height: 20,),
             TextField(
+              controller: Price,
               decoration: InputDecoration(
                   labelText: "Price",
                   border: OutlineInputBorder()
@@ -62,7 +84,7 @@ class _AddPageState extends State<AddPage> {
                             borderRadius:BorderRadius.zero
                         )
                     ),
-                    onPressed: (){}, child: Text("Submit")))
+                    onPressed: RestValueAdd, child: Text("Submit")))
           ],
         ),
       ),
