@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/Pages/addPage.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -32,7 +33,10 @@ class _MenuPageState extends State<MenuPage> {
                           borderRadius: BorderRadius.zero,
                         )
                     ),
-                    onPressed: (){}, child: Text("ADD"))),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder:
+                      (context)=>AddPage()));
+                    }, child: Text("ADD"))),
             SizedBox(height: 20,),
             SizedBox(
                 width: 200,
