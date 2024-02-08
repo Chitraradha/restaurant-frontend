@@ -43,7 +43,19 @@ class _MenuPageState extends State<MenuPage> {
                           borderRadius: BorderRadius.zero,
                         )
                     ),
-                    onPressed: (){}, child: Text("VIEW")))
+                    onPressed: (){}, child: Text("VIEW"))),
+            SizedBox(height: 20,),
+            SizedBox(
+                width: 200,
+                height: 40,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.indigoAccent,foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.zero,
+                        )
+                    ),
+                    onPressed: (){}, child: Text("Search"))),
+            SizedBox(height: 20,),
           ],
         ),
       ),
