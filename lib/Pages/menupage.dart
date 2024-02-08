@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/Pages/addPage.dart';
+import 'package:restaurant_app/Pages/searchpage.dart';
+import 'package:restaurant_app/Pages/viewpage.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -47,7 +49,9 @@ class _MenuPageState extends State<MenuPage> {
                           borderRadius: BorderRadius.zero,
                         )
                     ),
-                    onPressed: (){}, child: Text("VIEW"))),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ViewPage()));
+                    }, child: Text("VIEW"))),
             SizedBox(height: 20,),
             SizedBox(
                 width: 200,
@@ -58,7 +62,9 @@ class _MenuPageState extends State<MenuPage> {
                           borderRadius: BorderRadius.zero,
                         )
                     ),
-                    onPressed: (){}, child: Text("Search"))),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>SearchPage()));
+                    }, child: Text("Search"))),
             SizedBox(height: 20,),
           ],
         ),
