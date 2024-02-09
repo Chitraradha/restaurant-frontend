@@ -15,11 +15,11 @@ class ResApi{
         },
         body: jsonEncode(
             {
-              "OrderID": String,
-              "CustomerName": String,
-              "CustPhoneNo": String,
-              "FoodDetails": String,
-              "Price": String
+              "OrderID": OrderID,
+              "CustomerName": CustomerName,
+              "CustPhoneNo": CustPhoneNo,
+              "FoodDetails": FoodDetails,
+              "Price": Price
             }
         )
     );
