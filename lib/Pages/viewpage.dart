@@ -34,9 +34,10 @@ class _ViewPageState extends State<ViewPage> {
                         children: [
                           ListTile(
                             title: Text("Name:"+snapshot.data![index].orderId.toString()),
-                            subtitle: Text("ID No:"+snapshot.data![index].customerName .toString()+"\n"+
-                                "Qualification:"+snapshot.data![index].custPhoneNo .toString()+"\n"+
-                                "Specialisation:"+snapshot.data![index].foodDetails .toString()+"\n"
+                            subtitle: Text("cus No:"+snapshot.data![index].customerName .toString()+"\n"+
+                                "CusNo:"+snapshot.data![index].custPhoneNo .toString()+"\n"+
+                                "FoodDetails:"+snapshot.data![index].foodDetails .toString()+"\n"+
+                                "Price:"+snapshot.data![index].price.toString()
                             ),
                           )
                         ],
